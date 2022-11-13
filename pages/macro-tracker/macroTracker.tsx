@@ -27,7 +27,7 @@ export default function MacroTracker() {
 
     return (
         <div>
-            <h1>Macro Tacker</h1>
+            <h1 className="text-3xl">Macro Tacker</h1>
             <MacroInput items={items} addItem={addItem} />
             <MacroDisplay items={items} />
         </div>

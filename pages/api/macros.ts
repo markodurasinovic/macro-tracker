@@ -26,7 +26,7 @@ export default nextConnect<NextApiRequest, NextApiResponse>()
                 food: req.body.food,
                 amount: req.body.amount,
                 calories: req.body.calories,
-                protein: req.body.protin
+                protein: req.body.protein
              })
         })
 

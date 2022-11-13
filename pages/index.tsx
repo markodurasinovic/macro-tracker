@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import NavLink from './components/navLink'
+import NavLink from '../components/navLink'
 
 export default function Home() {
   return (
