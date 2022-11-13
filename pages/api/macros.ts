@@ -14,14 +14,14 @@ type MacroItem = {
 export default nextConnect<NextApiRequest, NextApiResponse>()
     .get(async (req, res) => {
         const macroItems = await withMongo(async (db: Db) => {
-            const collection = db.collection<MacroItem>('macroItem')
+            const collection = db.collection<MacroItem>(`${process.env.MACRO_ITEM_COLLECTION}`)
             return await collection.find().toArray()
         })
         return res.json(macroItems)
     })
     .post(async (req, res) => {
         await withMongo(async (db: Db) => {
-            const collection = db.collection<MacroItem>('macroItem')
+            const collection = db.collection<MacroItem>(`${process.env.MACRO_ITEM_COLLECTION}`)
             await collection.insertOne({ 
                 food: req.body.food,
                 amount: req.body.amount,
