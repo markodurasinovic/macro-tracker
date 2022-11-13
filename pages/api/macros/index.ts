@@ -1,15 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import nextConnect from 'next-connect'
-import { withMongo } from '../../middleware/database'
+import { withMongo } from '../../../middleware/database'
 import { Db } from 'mongodb'
-
-type MacroItem = {
-    food: string;
-    amount: number;
-    calories: number;
-    protein: number;
-}
 
 export default nextConnect<NextApiRequest, NextApiResponse>()
     .get(async (req, res) => {

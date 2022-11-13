@@ -1,13 +1,7 @@
 import { useState } from 'react'
 
-type MacroItem = {
-    food: string;
-    amount: number;
-    calories: number;
-    protein: number;
-}
 
-export default function MacroInput({items, addItem} : {items: Array<Object>, addItem: (item: MacroItem) => void}) {
+export default function MacroInput({items, handleAddItem} : {items: Array<Object>, handleAddItem: () => void}) {
     const [food, setFood] = useState('')
     const [amount, setAmount] = useState(0)
     const [calories, setCalories] = useState(0)
@@ -16,7 +10,6 @@ export default function MacroInput({items, addItem} : {items: Array<Object>, add
     const add = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
         const item: MacroItem = { food, amount, calories, protein };
-        addItem(item)
         fetch('/api/macros', {
             method: 'POST',
             headers: {
@@ -24,6 +17,7 @@ export default function MacroInput({items, addItem} : {items: Array<Object>, add
             },
             body: JSON.stringify(item)
         })
+        .then(() => handleAddItem())
     }
 
     return(
