@@ -27,16 +27,16 @@ export default function MacroInput({date, handleAddItem} : {date: Date, handleAd
     return(
         <form className='flex flex-col p-5'>
             <label htmlFor="food-input">Food:</label>
-            <input id="food-input" className='rounded mb-2' type='text' placeholder='Food' value={food} onChange={(e) => setFood(e.target.value)} />
+            <input id="food-input" className='rounded mb-2' type='text' value={food} onChange={(e) => setFood(e.target.value)} />
 
             <label htmlFor="amount-input">Amount:</label>
-            <input id="amount-input" className='rounded mb-2' type='number' placeholder='Amount' value={amount} onChange={(e) => setAmount(parseInt(e.target.value))} />
+            <input id="amount-input" className='rounded mb-2' type='number' value={amount} onChange={(e) => setAmount(parseInt(e.target.value))} />
 
             <label htmlFor="calories-input">Calories:</label>
-            <input id="calories-input" className='rounded mb-2' type='number' placeholder='Calories' value={calories} onChange={(e) => setCalories(parseInt(e.target.value))} />
+            <input id="calories-input" className='rounded mb-2' type='number' value={calories} onChange={(e) => setCalories(parseInt(e.target.value))} />
 
             <label htmlFor="protein-input">Protein:</label>
-            <input id="protein-input" className='rounded mb-4' type='number' placeholder='Protein' value={protein} onChange={(e) => setProtein(parseInt(e.target.value))} />
+            <input id="protein-input" className='rounded mb-4' type='number' value={protein} onChange={(e) => setProtein(parseInt(e.target.value))} />
             
             <button type="submit" className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' onClick={add}>Add</button>
         </form>
