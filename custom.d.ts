@@ -7,5 +7,6 @@ declare global {
         amount: number;
         calories: number;
         protein: number;
+        date: Date;
     }
 }

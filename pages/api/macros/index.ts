@@ -19,9 +19,9 @@ export default nextConnect<NextApiRequest, NextApiResponse>()
                 food: req.body.food,
                 amount: req.body.amount,
                 calories: req.body.calories,
-                protein: req.body.protein
+                protein: req.body.protein,
+                date: new Date(req.body.date)
              })
         })
-
         return res.status(204).end()
     })
